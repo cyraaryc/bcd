@@ -38,14 +38,14 @@
 
     function chooseTarget(enemies) {
       let target = null;
-      // Pick the living enemy with the greatest current  health.
+      // Pick the living enemy with the greatest currenthealth.
       for (const enemy of enemies) {
-        // Do not replace target when enemy health is 0
         if (enemy.health <= 0)
         {
           continue;
         }
         // Do not replace target if the target has health greater then current enemy
+        // This enforces a tie rule, where if the current health of the target is the same as the current enemy, the tie is in favour of the later one
         if (target && target.health > enemy.health) 
         {
           continue;
